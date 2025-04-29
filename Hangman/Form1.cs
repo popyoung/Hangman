@@ -34,7 +34,8 @@ namespace Hangman
             soundWin = new("./resource/2.wav");
             soundDefeat = new("./resource/3.wav");
             soundAgain = new("./resource/1.wav");
-            JsonConfigHelper = new JsonHelper<JsonUserConfig, Form1>(this);
+            JsonHelper.DictionaryConverter<string, int> converter = new JsonHelper.DictionaryConverter<string, int>(dict => dict.OrderBy(item => item.Value));
+            JsonConfigHelper = new JsonHelper<JsonUserConfig, Form1>(this, converter);
             if (!JsonConfigHelper.Load())
                 MessageBox.Show("读取配置文件出错");
             ChangeVocabulary();
@@ -87,7 +88,10 @@ namespace Hangman
             if (Config.单词提示[Word] == "null")
                 richTextBox2.AppendText(Config.单词提示[Word]);
             else
-                richTextBox2.AppendText(Config.单词提示[Word], Color.Red);
+            {
+                var tips = Config.单词提示[Word].Split('\u000b');
+                richTextBox2.AppendText(tips[random.Next(tips.Length)], Color.Red);
+            }
             panel1.Focus();
         }
 
@@ -255,7 +259,6 @@ namespace Hangman
             //}
             JsonConfigHelper.Save();
         }
-
         private void RichTextBox1_Enter(object sender, EventArgs e)
         {
             panel1.Focus();
@@ -281,11 +284,19 @@ namespace Hangman
                     if (int.TryParse(richTextBox2.Text, out int t))
                         SetWeight(Word, t);
                     else
+                    {
+                        richTextBox2.Text = Config.单词权重[Word].ToString();
+                        richTextBox2.SelectAll();
+                        //richTextBox2.Undo();
+                        e.SuppressKeyPress = true;
                         return;
+                    }
                 }
                 else if (state == States.EditHint)
                 {
-                    Config.单词提示[Word] = richTextBox2.Text.Trim();
+                    if (e.Modifiers == Keys.Shift)
+                        return;
+                    Config.单词提示[Word] = richTextBox2.Text.Replace("\u000b ", "\u000b").Replace(" \u000b", "\u000b").Trim();
                 }
                 state = States.End;
                 richTextBox2.Clear();

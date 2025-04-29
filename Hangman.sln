@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangman", "Hangman\Hangman.csproj", "{996F5C0F-3805-4546-ADB1-D39FD04ED382}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HugeHard", "..\Hugehard\HugeHard\HugeHard.csproj", "{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HugeHard.Json", "..\Hugehard\HugeHard.Json\HugeHard.Json.csproj", "{20C605F9-7E2C-438C-B60B-561A162B3A65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,22 @@ Global
 		{996F5C0F-3805-4546-ADB1-D39FD04ED382}.Release|Any CPU.Build.0 = Release|Any CPU
 		{996F5C0F-3805-4546-ADB1-D39FD04ED382}.Release|x64.ActiveCfg = Release|Any CPU
 		{996F5C0F-3805-4546-ADB1-D39FD04ED382}.Release|x64.Build.0 = Release|Any CPU
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Debug|x64.ActiveCfg = Debug|x64
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Debug|x64.Build.0 = Debug|x64
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Release|x64.ActiveCfg = Release|x64
+		{6000A1B8-66C5-4AF0-A760-4DCBDA6F2C8A}.Release|x64.Build.0 = Release|x64
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Debug|x64.Build.0 = Debug|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Release|x64.ActiveCfg = Release|Any CPU
+		{20C605F9-7E2C-438C-B60B-561A162B3A65}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
